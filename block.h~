@@ -1,0 +1,8 @@
+#ifndef _BLOCK_H_
+#define _BLOCK_H_
+
+
+extern void block_step(void);
+extern int ball_bonus_state(void);
+
+#endif

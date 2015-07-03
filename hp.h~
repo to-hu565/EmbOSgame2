@@ -1,0 +1,6 @@
+#ifndef _BALL_H_
+#define _BALL_H_
+
+extern void ball_step(void);              // アニメーションの1ステップを行なう．
+
+#endif

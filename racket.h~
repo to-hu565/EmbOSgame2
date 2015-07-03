@@ -1,0 +1,14 @@
+
+#ifndef _RACKET_H_
+#define _RACKET_H_
+
+#define COLOR_WHITE     BGR(31, 31, 31)
+#define COLOR_BLACK     0
+
+extern void racket_step(void);
+
+extern int racket_get_x(void);
+extern int racket_get_w(void);
+extern void racket_set_w(int new_w);
+
+#endif

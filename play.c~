@@ -1,0 +1,47 @@
+#include "gba.h"
+#include "color.h"
+#include "ball.h"
+#include "racket.h"
+#include "game.h"
+#include "hp.h"
+
+#define INTERVAL        160
+
+void
+delay(hword val)
+{
+  val += gba_register(TMR_COUNT0);
+  while (val != gba_register(TMR_COUNT0))
+    ;
+}
+
+main(){
+
+  /* Initialize LCD Control Register to use Mode 3. */
+  gba_register(LCD_CTRL) = LCD_BG2EN | LCD_MODE3;
+  
+  /*timer initialize*/
+  gba_register(TMR_COUNT0) = 0;
+  gba_register(TMR_CTRL0) = TMR_ENABLE + TMR_1024CLOCK;
+
+  while(1){
+
+    display_step();
+    
+    ball_step();
+    
+    racket_step();
+
+    block_step();
+
+    hp_step();
+
+    barrage_step();
+    
+    game_step();
+    
+    delay(INTERVAL);
+    
+  }
+  
+}

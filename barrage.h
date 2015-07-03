@@ -1,0 +1,6 @@
+#ifndef _BARRAGE_H_
+#define _BARRAGE_H_
+
+extern void barrage_step(void);
+
+#endif
